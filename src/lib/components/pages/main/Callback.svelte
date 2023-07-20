@@ -1,6 +1,6 @@
 <section
 	class="container mx-auto max-w-screen-xl my-12 md:my-24 rounded-none lg:rounded-3xl bg-center bg-no-repeat bg-cover"
-	style="background-image: url(Главный-баннер.webp);"
+	style="background-image: url(Закажите-обратный-звонок.webp);"
 >
 	<div
 		class="flex flex-col gap-4 bg-slate-800 bg-opacity-70 h-full w-full p-8 lg:p-20 rounded-none lg:rounded-3xl"

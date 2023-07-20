@@ -25,8 +25,8 @@
 			</a>
 		</div>
 	</div>
-	<div class="footer p-10 justify-evenly max-w-screen-xl mx-auto">
-		<div>
+	<div class="grid grid-cols-1 text-center sm:grid-cols-2 lg:grid-cols-4 gap-4 p-10 justify-evenly max-w-screen-xl mx-auto">
+		<div class="flex flex-col gap-1 sm:text-left">
 			<span class="footer-title normal-case font-condensed text-xl">Гостям</span>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Курортная поликлиника</a>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Номерной фонд</a>
@@ -36,7 +36,7 @@
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Контакты</a>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Отзывы</a>
 		</div>
-		<div>
+		<div class="flex flex-col gap-1 sm:text-left">
 			<span class="footer-title normal-case font-condensed text-xl">О нас</span>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Новости</a>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Фотогалерея</a>
@@ -45,7 +45,7 @@
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Сотрудники</a>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Вакансии</a>
 		</div>
-		<div>
+		<div class="flex flex-col gap-1 sm:text-left">
 			<span class="footer-title normal-case font-condensed text-xl">Мероприятия и отдых</span>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Бассейн</a>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Досуг для отдыхающих</a>
@@ -55,7 +55,7 @@
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Банкеты</a>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Банкетное меню</a>
 		</div>
-		<div>
+		<div class="flex flex-col gap-1 sm:text-left">
 			<span class="footer-title normal-case font-condensed text-xl">Об организации</span>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Дипломы и награды</a>
 			<a href="/" class="link link-hover font-condensed font-bold text-sm">Документы</a>
