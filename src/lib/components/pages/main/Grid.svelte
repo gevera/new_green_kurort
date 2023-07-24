@@ -23,7 +23,7 @@
 		{
 			id: 4,
 			title: 'Проведение банкетов',
-			url: '/',
+			url: 'https://banket.green-kurort.ru/',
 			img: 'Проведение-банкетов.webp'
 		},
 		{
@@ -42,8 +42,10 @@
 </script>
 
 <section class="container mx-auto max-w-screen-xl my-12 md:my-24 p-4">
-	<div class="grid gap-5 grid-cols-1 lg:grid-cols-5 lg:min-h-[16rem] mb-10 ">
-		<h2 class="lg:col-span-2 font-condensed text-5xl font-bold max-w-md text-center lg:text-left mx-auto">
+	<div class="grid gap-5 grid-cols-1 lg:grid-cols-5 lg:min-h-[16rem] mb-10">
+		<h2
+			class="lg:col-span-2 font-condensed text-5xl font-bold max-w-md text-center lg:text-left mx-auto"
+		>
 			Сохраним здоровье вместе!
 		</h2>
 		<p class="lg:col-span-3 place-self-end lg:text-right">

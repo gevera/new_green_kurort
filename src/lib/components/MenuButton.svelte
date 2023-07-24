@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Burger from './icons/Burger.svelte';
+	import Close from './icons/Close.svelte';
+	export let showClose = false;
 </script>
 
 <button
@@ -7,6 +9,10 @@
 >
 	<span class="font-bold">Меню</span>
 	<span class="h-5 w-5">
-		<Burger />
+		{#if showClose}
+			<Close />
+		{:else}
+			<Burger />
+		{/if}
 	</span>
 </button>

@@ -1,3 +1,8 @@
+<script>
+
+	import { siteData } from "$lib/store";
+
+</script>
 <section class="container mx-auto max-w-screen-xl my-12 md:my-24 p-4" id="contacts">
 	<h3
 		class="lg:col-span-2 font-condensed text-5xl font-bold text-center lg:text-left mb-6 lg:mb-12"
@@ -10,9 +15,9 @@
 			<p class="text-xl font-condensed font-bold text-gray-400 mb-2">Адрес</p>
 			<p>г. Уфа, ул. Менделеева, 136/5</p>
 		</a>
-		<a href="tel:+7 347 225 25 30" class="p-4">
+		<a href={`tel:${$siteData.telephone_2}`} class="p-4">
 			<p class="text-xl font-condensed font-bold text-gray-400 mb-2">Телефон</p>
-			<p>+7 347 225 25 30</p>
+			<p>{$siteData.telephone_2}</p>
 		</a>
 		<div class="p-4">
 			<p class="text-xl font-condensed font-bold text-gray-400 mb-2">Режим работы</p>
