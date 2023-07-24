@@ -27,7 +27,6 @@
 
 	const handleSubmit = async () => {
 		try {
-			console.log(request);
 			const r = await fetch(`${main_url}/kurort-predlojeniyas`, {
 				method: 'POST',
 				headers: new Headers({
@@ -54,7 +53,6 @@
 	} else {
 		allow = false;
 	}
-	$: console.log(modalOpened)
 </script>
 
 <svelte:head>
@@ -89,8 +87,8 @@
 					/>
 					<input
 						use:imask={options}
-						bind:value={request.telephone}
 						on:accept={handleTelephone}
+						bind:value={request.telephone}
 						required
 						name="phone"
 						placeholder="+7 (000) 000-0000"

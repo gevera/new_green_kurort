@@ -4,22 +4,22 @@
 		{
 			id: '01',
 			title: 'Благодарственное письмо от владельца',
-			url: '/'
+			url: '/organization/awards'
 		},
 		{
 			id: '02',
 			title: 'Первое место в номинации “Лучший санаторий 2023 года”',
-			url: '/'
+			url: '/organization/awards'
 		},
 		{
 			id: '03',
 			title: 'Победа в номинации “Лучшее курортное место в Башкирии 2023”',
-			url: '/'
+			url: '/organization/awards'
 		},
 		{
 			id: '04',
 			title: 'Наши награды',
-			url: '/'
+			url: '/organization/awards'
 		}
 	];
 </script>

@@ -5,19 +5,20 @@ import type { PageLoad } from './$types';
 export const load = (async () => {
     const main_url = get(siteData).api_url;
     try {
-        const response = await fetch(`${main_url}/kurort-zakupkies?_sort=name:ASC`);
+        const response = await fetch(`${main_url}/kurort-putyovkas`);
         if(response.ok) {
-            const zakupkies = await response.json();
-            return { zakupkies, main_url };
+            const putyovkas = await response.json();
+            return { putyovkas, main_url };
         } else {
             return {
-                zakupkies: [], main_url
+                putyovkas: [], main_url
             }
         }
+
     } catch (error) {
         console.log(error);
         return {
-            zakupkies: [], main_url
+            putyovkas: [], main_url
         }
     }
 }) satisfies PageLoad;

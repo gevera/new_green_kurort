@@ -6,9 +6,14 @@ export const load = (async () => {
     const main_url = get(siteData).api_url;
     try {
         const response = await fetch(`${main_url}/kurort-dosugs?_where[show_eq]=true&_sort=id:ASC`);
-        const dosug = await response.json();
-        return { dosug, main_url };
-
+        if(response.ok) {
+            const dosug = await response.json();
+            return { dosug, main_url };
+        } else {
+            return {
+                dosug: [], main_url
+            }
+        }
     } catch (error) {
         console.log(error);
         return {

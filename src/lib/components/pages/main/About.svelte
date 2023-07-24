@@ -1,10 +1,53 @@
 <script lang="ts">
 	import ChevronRight from '$lib/components/icons/ChevronRight.svelte';
+	import Close from '$lib/components/icons/Close.svelte';
 	import Finger from '$lib/components/icons/Finger.svelte';
 	import Play from '$lib/components/icons/Play.svelte';
+
+	let showMap = false;
 </script>
 
-<section class="container mx-auto max-w-screen-xl my-12 md:my-24 p-4">
+<div class="modal" id="map_modal">
+	<div class="modal-box w-screen min-w-[90%]">
+		<div class="modal-action mt-0 mb-2">
+			<a href="#about" class="btn btn-sm btn-ghost btn-circle border border-gray-400">
+				<div class="w-4 h-4">
+					<Close />
+				</div>
+			</a>
+		</div>
+		<div class="w-full">
+			<img
+				src="/map.jpeg"
+				alt="Карта санатория"
+				class="w-full object-cover object-center bg-no-repeat"
+			/>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="video_modal">
+	<div class="modal-box w-screen min-w-[90%]">
+		<div class="modal-action mt-0 mb-2">
+			<a href="#about" class="btn btn-sm btn-ghost btn-circle border border-gray-400">
+				<div class="w-4 h-4">
+					<Close />
+				</div>
+			</a>
+		</div>
+		<div class="w-full h-full">
+			<iframe
+				class="w-full h-[60vh]"
+				src="https://www.youtube.com/embed/BMwSlS3OxWU"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			/>
+		</div>
+	</div>
+</div>
+
+<section class="container mx-auto max-w-screen-xl my-12 md:my-24 p-4" id="about">
 	<h3 class="lg:col-span-2 font-condensed text-5xl font-bold text-center lg:text-left mb-6">
 		О санатории
 	</h3>
@@ -33,7 +76,8 @@
 	</div>
 	<div class="grid gap-5 grid-cols-1 lg:grid-cols-2 mb-10">
 		<div class="grid gap-4 grid-cols-1 lg:grid-cols-2">
-			<div
+			<a
+				href="#map_modal"
 				class="hero h-[12rem] rounded-2xl cursor-pointer"
 				style="background-image: url(map.jpeg);"
 			>
@@ -43,13 +87,13 @@
 						<Finger />
 					</div>
 				</div>
-			</div>
+			</a>
 			<div class="font-condensed font-bold text-xl text-gray-400 lg:max-w-[10rem] text-left">
 				Посмотрите карту нашего санатория
 			</div>
 		</div>
 		<div>
-			<div
+			<a href="#video_modal"
 				class="hero h-[32rem] rounded-2xl cursor-pointer"
 				style="background-image: url(Видео.webp);"
 			>
@@ -59,7 +103,7 @@
 						<Play />
 					</div>
 				</div>
-			</div>
+			</a>
 			<p class="my-10 text-sm max-w-xl mx-auto">
 				Здесь царит умиротворяющая тишина и свежий исцеляющий воздух. В санатории реализуется одни
 				из наиболее эффективных программ нейрореабилитации и кардиореабилитации. Многочисленными
@@ -67,7 +111,9 @@
 				своевременной реабилитации к труду и полноценной жизни возвращаются в 1,5 раза больше людей
 			</p>
 
-			<a class="btn btn-ghost btn-sm border border-primary text-primary rounded-full normal-case hover:bg-primary hover:text-white" href="/"
+			<a
+				class="btn btn-ghost btn-sm border border-primary text-primary rounded-full normal-case hover:bg-primary hover:text-white"
+				href="/"
 				>Читать подробнее <span class="w-5 h-5">
 					<ChevronRight />
 				</span>
@@ -75,3 +121,13 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.modal-box {
+		width: 100vw !important;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+</style>

@@ -1,3 +1,8 @@
+<script>
+
+	import { goto } from "$app/navigation";
+
+</script>
 <section
 	class="container mx-auto max-w-screen-xl my-12 md:my-24 p-4 md:p-8 lg:p-16 bg-stone-800 rounded-none lg:rounded-3xl"
 >
@@ -24,7 +29,7 @@
 			/>
 			<form
 				class="grid grid-cols-1 md:grid-cols-2 gap-2"
-				on:submit|preventDefault={() => console.log('Yes')}
+				on:submit|preventDefault={() => goto('/booking')}
 			>
 				<div class="form-control w-full">
 					<label class="label">

@@ -1,5 +1,5 @@
 <div
-	class="grid grid-cols-2 text-center lg:grid-cols-4 gap-2 md:gap-4 p-2 sm:p-5 md:p-10 justify-evenly max-w-screen-xl mx-auto"
+	class="grid grid-cols-2 text-center lg:grid-cols-4 gap-2 md:gap-4 p-2 sm:p-5 md:p-10 justify-evenly max-w-screen-xl mx-auto z-[25]"
 >
 	<div class="flex flex-col gap-[0.1rem] sm:gap-1 text-left">
 		<span class="footer-title normal-case font-condensed text-lg md:text-xl leading-5">Гостям</span>

@@ -6,9 +6,14 @@ export const load = (async () => {
     const main_url = get(siteData).api_url;
     try {
         const response = await fetch(`${main_url}/kurort-meropriyatiyas?_where[show_eq]=true&_sort=id:ASC`);
-        const activities = await response.json();
-        return { activities, main_url };
-
+        if(response.ok) {
+            const activities = await response.json();
+            return { activities, main_url };
+        } else {
+            return {
+                activities: [], main_url
+            }
+        }
     } catch (error) {
         console.log(error);
         return {

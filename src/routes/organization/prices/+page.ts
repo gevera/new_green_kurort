@@ -6,9 +6,14 @@ export const load = (async () => {
     const main_url = get(siteData).api_url;
     try {
         const response = await fetch(`${main_url}/kurort-prices?_sort=name:ASC`);
-        const prices = await response.json();
-        return { prices, main_url };
-
+        if(response.ok) {
+            const prices = await response.json();
+            return { prices, main_url };
+        } else {
+            return {
+                prices: [], main_url
+            }
+        }
     } catch (error) {
         console.log(error);
         return {

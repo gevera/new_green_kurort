@@ -5,19 +5,19 @@
 		{
 			id: 1,
 			title: 'Санаторно-курортные путёвки',
-			url: '/',
+			url: '/guests/vouchers',
 			img: 'Санаторно-курортные-путевки.webp'
 		},
 		{
 			id: 2,
 			title: 'Курортная поликлиника',
-			url: '/',
+			url: '/guests/polyclinic',
 			img: 'Курортная-поликлиника.webp'
 		},
 		{
 			id: 3,
 			title: 'Организация мероприятий',
-			url: '/',
+			url: '/leisure/activities',
 			img: 'Организация-мероприятий.webp'
 		},
 		{
@@ -35,7 +35,7 @@
 		{
 			id: 6,
 			title: 'Косметология «Green Palace»',
-			url: '/',
+			url: '/guests/polyclinic',
 			img: 'Косметология.webp'
 		}
 	];
