@@ -12,19 +12,19 @@
 
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mb-12">
 		<a href="https://yandex.ru/maps/-/CPrkYvb" target="_blank" class="p-4">
-			<p class="text-xl font-condensed font-bold text-gray-400 mb-2">Адрес</p>
+			<p class="text-xl font-condensed font-bold text-gray-700 mb-2">Адрес</p>
 			<p>г. Уфа, ул. Менделеева, 136/5</p>
 		</a>
 		<a href={`tel:${$siteData.telephone_2}`} class="p-4">
-			<p class="text-xl font-condensed font-bold text-gray-400 mb-2">Телефон</p>
+			<p class="text-xl font-condensed font-bold text-gray-700 mb-2">Телефон</p>
 			<p>{$siteData.telephone_2}</p>
 		</a>
 		<div class="p-4">
-			<p class="text-xl font-condensed font-bold text-gray-400 mb-2">Режим работы</p>
+			<p class="text-xl font-condensed font-bold text-gray-700 mb-2">Режим работы</p>
 			<p>Пн — Вс: с 8:30 до 21:00</p>
 		</div>
 		<a href="mailto:green-kurort@green-kurort.ru" class="p-4">
-			<p class="text-xl font-condensed font-bold text-gray-400 mb-2">Эл. почта</p>
+			<p class="text-xl font-condensed font-bold text-gray-700 mb-2">Эл. почта</p>
 			<p>green-kurort@green-kurort.ru</p>
 		</a>
 	</div>
@@ -39,7 +39,7 @@
 				style="color:#eee;font-size:12px;position:absolute;top:14px;">Санаторий в Уфе</a
 			><iframe
 				title="Карта"
-				class="rounded-3xl grayscale"
+				class="rounded-3xl"
 				src="https://yandex.ru/map-widget/v1/?ll=56.016524%2C54.716133&mode=search&oid=153901600785&ol=biz&z=17.27"
 				width="100%"
 				height="500"

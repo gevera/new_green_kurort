@@ -135,8 +135,7 @@
 			/>
 			<button
 				type="submit"
-				class:btn-ghost={!allow}
-				class="btn btn-primary rounded-full normal-case btn-wide text-white">Заказать звонок</button
+				class="btn btn-primary hover:bg-green-500 rounded-full normal-case btn-wide text-white">Заказать звонок</button
 			>
 		</form>
 		<p class="text-white text-sm">

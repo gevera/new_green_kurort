@@ -7,6 +7,8 @@
 	import MenuItems from './MenuItems.svelte';
 	import Close from './icons/Close.svelte';
 	import Callback from './pages/main/Callback.svelte';
+	import LogoNew from './icons/logo-new.svelte';
+	import { siteData } from '$lib/store';
 
 	export let showSlidingMenu = false;
 	let showBigMenu = false;
@@ -66,11 +68,11 @@
 			</ul>
 		</div> -->
 			<a
-				class="text-kurort-800 h-full w-32 hover:text-primary pr-4"
+				class="text-kurort-800 h-full w-24 md:w-32 hover:text-primary pr-4"
 				href="/"
 				on:click={() => (showBigMenu = false)}
 			>
-				<Logo />
+				<LogoNew />
 			</a>
 
 			<button class="hidden lg:inline-block" on:click={() => (showBigMenu = !showBigMenu)}>
@@ -91,7 +93,7 @@
 			</li> -->
 				<li><a href="/guests/rooms" class="font-bold text-sm py-1 px-2">Номерной фонд</a></li>
 				<li>
-					<a href="/guests/polyclinic" class="font-bold text-sm py-1 px-2">Курортная поликлиника</a>
+					<a href="/guests/polyclinic" class="font-bold text-sm py-1 px-2">Поликлиника</a>
 				</li>
 				<li>
 					<a
@@ -111,10 +113,11 @@
 				>
 					Заказать звонок
 				</label>
-				<label for="callback_modal" class="lg:hidden btn btn-primary btn-sm btn-circle">
-					<div class="w-4 h-4">
+				<label for="callback_modal" class="lg:hidden btn btn-primary btn-sm rounded-full text-xs">
+					<!-- <div class="w-4 h-4">
 						<Phone />
-					</div>
+					</div> -->
+					Заказать звонок
 				</label>
 			</div>
 		</div>
@@ -131,7 +134,11 @@
 					{/if}
 				</div>
 			</button>
-			<div class="text-white hidden lg:block">
+			<div class="text-white hidden lg:flex gap-2 items-center">
+				<a
+					href={`tel:${$siteData.telephone_2}`}
+					class="hidden xl:block link link-primary link-hover font-bold">{$siteData.telephone_2}</a
+				>
 				<label
 					for="callback_modal"
 					class="hidden lg:flex items-center btn btn-primary btn-sm rounded-full normal-case text-sm pb-0.5"
@@ -147,17 +154,17 @@
 		</div>
 	</div>
 	{#if showBigMenu}
-		<div class="z-30" transition:fly on:click={() => (showBigMenu = false)}>
+		<div class="z-30 shadow-2xl pb-5" transition:fly on:click={() => (showBigMenu = false)}>
 			<MenuItems />
 		</div>
 	{/if}
 	{#if showSlidingMenu}
 		<div
 			on:click={() => (showBigMenu = false)}
-			class="hidden lg:block border-t bg-white w-full mx-auto p-2 max-w-screen-xl -z-10 shadow-xl"
+			class="hidden lg:block border-t bg-white w-full mx-auto p-2 -z-10 shadow-xl text-center"
 			transition:fly={{ y: -10 }}
 		>
-			<ul class="flex gap-1 justify-evenly font-condensed font-bold text-sm items-center">
+			<ul class="flex gap-1 justify-evenly font-condensed font-bold text-sm items-start">
 				<li>
 					<a
 						href="/guests/polyclinic"
@@ -193,7 +200,22 @@
 				<li>
 					<a
 						href="/guests/polyclinic"
-						class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg">Гастроэнтерология</a
+						class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg"
+						>Лечение опорно-двигательного аппарата</a
+					>
+				</li>
+				<li>
+					<a
+						href="/guests/polyclinic"
+						class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg"
+						>Гастроэнтерология</a
+					>
+				</li>
+				<li>
+					<a
+						href="/guests/polyclinic"
+						class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg"
+						>Лечение протрузии грыжи позвоночника</a
 					>
 				</li>
 			</ul>
