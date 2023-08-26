@@ -22,7 +22,7 @@
 			<div class="hv-70 lg:w-2/3 md:w-1/2 w-full bg-gray-300 rounded-lg">
 				<iframe
 					title="Карта"
-					class="rounded-3xl grayscale"
+					class="rounded-3xl"
 					src="https://yandex.ru/map-widget/v1/?ll=56.016524%2C54.716133&mode=search&oid=153901600785&ol=biz&z=17.27"
 					width="100%"
 					height="500"

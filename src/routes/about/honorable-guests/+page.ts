@@ -4,9 +4,11 @@ import type { PageLoad } from './$types';
 
 export const load = (async () => {
     const main_url = get(siteData).api_url;
+    const url = new URL('kurort-gostis', main_url);
+    url.searchParams.append('_sort', 'name:ASC');
     try {
-        const response = await fetch(`${main_url}/kurort-gostis?_sort=name:ASC`);
-        if(response.ok) {
+        const response = await fetch(url);
+        if (response.ok) {
             const guests = await response.json();
             return { guests: guests.filter((g: any) => g.show), main_url };
         } else {

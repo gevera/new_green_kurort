@@ -8,7 +8,7 @@
 		mask: '+{7} (000) 000-00-00'
 	};
 
-	const dispatch = createEventDispatcher()
+	const dispatch = createEventDispatcher();
 
 	let request = {
 		name: '',
@@ -16,6 +16,7 @@
 	};
 
 	let showModal = false;
+	let userAgreed = false;
 
 	const handleTelephone = ({ detail }) => {
 		allow = false;
@@ -69,7 +70,7 @@
 						name: '',
 						telephone: ''
 					};
-                    dispatch('sent')
+					dispatch('sent');
 				}, 3600);
 			}
 		} catch (error) {
@@ -115,35 +116,49 @@
 		<p class="text-white font-semibold">Оставьте заявку и наш специалист свяжется с Вами</p>
 		<form
 			on:submit|preventDefault={handleSubmit}
-			class="flex flex-col lg:flex-row gap-4 items-center mt-10 mb-6"
+			class="flex flex-col lg:flex-row gap-4 items-start mt-10 mb-6"
 		>
-			<input
-				type="text"
-				placeholder="Ваше имя"
-				bind:value={request.name}
-				class="input input-bordered w-full max-w-xs rounded-full focus:ring-0 focus:outline-none focus:border-stone-400"
-				required
-			/>
-			<input
-				type="tel"
-				placeholder="+7 (000) 000-0000"
-				use:imask={options}
-				bind:value={request.telephone}
-				on:accept={handleTelephone}
-				class="input input-bordered w-full max-w-xs rounded-full focus:ring-0 focus:outline-none focus:border-stone-400"
-				required
-			/>
+			<div class="flex flex-col gap-4">
+				<div class="flex flex-col lg:flex-row gap-4">
+					<input
+						type="text"
+						placeholder="Ваше имя"
+						bind:value={request.name}
+						class="input input-bordered w-full max-w-xs rounded-full focus:ring-0 focus:outline-none focus:border-stone-400"
+						required
+					/>
+					<input
+						type="tel"
+						placeholder="+7 (000) 000-0000"
+						use:imask={options}
+						bind:value={request.telephone}
+						on:accept={handleTelephone}
+						class="input input-bordered w-full max-w-xs rounded-full focus:ring-0 focus:outline-none focus:border-stone-400"
+						required
+					/>
+				</div>
+				<div class="form-control">
+					<label class="label cursor-pointer">
+						<span class="label-text text-white text-sm pr-4"
+							>Дать согласие на обработку своих персональных данных</span
+						>
+						<input type="checkbox" bind:checked={userAgreed} class="checkbox checkbox-primary" />
+					</label>
+				</div>
+			</div>
+			<!-- <p class="text-white text-sm">
+				Нажимая на кнопку, Вы даете согласие на <a
+					href="/"
+					class="underline underline-offset-4 hover:text-gray-200"
+					>обработку своих персональных данных</a
+				>
+			</p> -->
 			<button
 				type="submit"
-				class="btn btn-primary hover:bg-green-500 rounded-full normal-case btn-wide text-white">Заказать звонок</button
+				class={`btn btn-primary ease-in duration-300 hover:bg-green-600 rounded-full normal-case btn-wide text-white ${
+					userAgreed ? '' : 'bg-green-700 pointer-events-none cursor-not-allowed'
+				}`}>Заказать звонок</button
 			>
 		</form>
-		<p class="text-white text-sm">
-			Нажимая на кнопку, Вы даете согласие на <a
-				href="/"
-				class="underline underline-offset-4 hover:text-gray-200"
-				>обработку своих персональных данных</a
-			>
-		</p>
 	</div>
 </section>

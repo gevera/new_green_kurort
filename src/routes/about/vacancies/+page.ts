@@ -4,8 +4,10 @@ import type { PageLoad } from './$types';
 
 export const load = (async () => {
     const main_url = get(siteData).api_url;
+    const url = new URL('kurort-vakancies', main_url);
+    url.searchParams.append('_sort', 'Name:ASC');
     try {
-        const response = await fetch(`${main_url}/kurort-vakancies?_sort=Name:ASC`);
+        const response = await fetch(url);
         if(response.ok) {
             const vacancies = await response.json();
             return { vacancies, main_url };

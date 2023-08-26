@@ -5,55 +5,60 @@
 	import Neiro from '$lib/components/icons/Neiro.svelte';
 	import Skin from '$lib/components/icons/Skin.svelte';
 	import GridItem from '$lib/components/pages/main/GridItem.svelte';
+	import type { PageData } from './$types';
 
-	const services = [
-		{
-			title: 'Реабилитация после COVID-19 и пневмонии',
-			img: 'https://files.green-kurort.ru/green_rosha/poly/covid.jpeg',
-			url: '/guests/polyclinic',
-			id: 1,
-			logo: Lungs
-			// content: CovidContent
-		},
-		{
-			title: 'Кардиореабилитация',
-			img: 'https://files.green-kurort.ru/green_rosha/poly/14.jpg',
-			url: '/guests/polyclinic',
-			id: 2,
-			logo: Cardio
-		},
-		{
-			title: 'Нейрореабилитация',
-			img: 'https://files.green-kurort.ru/green_rosha/poly/neiro.png',
-			url: '/guests/polyclinic',
-			id: 3,
-			logo: Neiro
-		},
-		{
-			title: 'Косметология',
-			img: 'https://files.green-kurort.ru/green_rosha/poly/13.jpg',
-			url: '/guests/polyclinic',
-			id: 4,
-			logo: Skin
-		},
+	export let data: PageData;
 
-		{
-			title: 'Бальнеотерапия',
-			img: 'https://files.green-kurort.ru/green_rosha/poly/11.jpg',
-			url: '/guests/polyclinic',
-			id: 5,
-			logo: Backbone
-			// content: Osteo
-		},
-		{
-			title: 'Гастроэнтерология',
-			img: 'https://files.green-kurort.ru/green_rosha/poly/12.jpg',
-			url: '/guests/polyclinic',
-			id: 6,
-			logo: Backbone
-			// content: Osteo
-		}
-	];
+	$: ({ pages, main_url } = data);
+
+	// const services = [
+	// 	{
+	// 		title: 'Реабилитация после COVID-19 и пневмонии',
+	// 		img: 'https://files.green-kurort.ru/green_rosha/poly/covid.jpeg',
+	// 		url: '/guests/polyclinic',
+	// 		id: 1,
+	// 		logo: Lungs
+	// 		// content: CovidContent
+	// 	},
+	// 	{
+	// 		title: 'Кардиореабилитация',
+	// 		img: 'https://files.green-kurort.ru/green_rosha/poly/14.jpg',
+	// 		url: '/guests/polyclinic',
+	// 		id: 2,
+	// 		logo: Cardio
+	// 	},
+	// 	{
+	// 		title: 'Нейрореабилитация',
+	// 		img: 'https://files.green-kurort.ru/green_rosha/poly/neiro.png',
+	// 		url: '/guests/polyclinic',
+	// 		id: 3,
+	// 		logo: Neiro
+	// 	},
+	// 	{
+	// 		title: 'Косметология',
+	// 		img: 'https://files.green-kurort.ru/green_rosha/poly/13.jpg',
+	// 		url: '/guests/polyclinic',
+	// 		id: 4,
+	// 		logo: Skin
+	// 	},
+
+	// 	{
+	// 		title: 'Бальнеотерапия',
+	// 		img: 'https://files.green-kurort.ru/green_rosha/poly/11.jpg',
+	// 		url: '/guests/polyclinic',
+	// 		id: 5,
+	// 		logo: Backbone
+	// 		// content: Osteo
+	// 	},
+	// 	{
+	// 		title: 'Гастроэнтерология',
+	// 		img: 'https://files.green-kurort.ru/green_rosha/poly/12.jpg',
+	// 		url: '/guests/polyclinic',
+	// 		id: 6,
+	// 		logo: Backbone
+	// 		// content: Osteo
+	// 	}
+	// ];
 </script>
 
 <svelte:head>
@@ -81,8 +86,14 @@
 			class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8 lg:py-10"
 		>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-				{#each services as service, idx}
-					<GridItem item={service} />
+				{#each pages as page (page.id)}
+					<GridItem
+						item={{
+							...page,
+							url: '/guests/polyclinic/' + page.slug,
+							img: main_url + page.hero_image.formats.small.url
+						}}
+					/>
 				{/each}
 			</div>
 		</div>

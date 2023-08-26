@@ -1,4 +1,4 @@
-import { readable } from "svelte/store";
+import { readable, writable, type Writable } from "svelte/store";
 
 export const siteData = readable({
     telephone_1: "8 (800) 200-2190",
@@ -10,4 +10,6 @@ export const siteData = readable({
     email: "op_marketgreen@mail.ru",
     address: "450022, Республика Башкортостан, г. Уфа, ул. Менделеева, 136/5",
     api_url: "https://api.skrymenu.com"
-})
+});
+
+export const pages: Writable<any[]> = writable([]);

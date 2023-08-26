@@ -8,7 +8,7 @@
 	import Close from './icons/Close.svelte';
 	import Callback from './pages/main/Callback.svelte';
 	import LogoNew from './icons/logo-new.svelte';
-	import { siteData } from '$lib/store';
+	import { pages, siteData } from '$lib/store';
 
 	export let showSlidingMenu = false;
 	let showBigMenu = false;
@@ -79,7 +79,7 @@
 				<MenuButton showClose={showBigMenu} />
 			</button>
 		</div>
-		<div class="navbar-center lg:flex gap-4">
+		<div class="navbar-center lg:flex gap-4" on:click={() => (showBigMenu = false)}>
 			<ul class="menu menu-horizontal px-1 hidden lg:inline-flex">
 				<li><a href="/guests/vouchers" class="font-bold text-sm py-1 px-2">Путевки</a></li>
 				<!-- <li tabindex="0">
@@ -158,21 +158,22 @@
 			<MenuItems />
 		</div>
 	{/if}
-	{#if showSlidingMenu}
+	{#if $pages.length && showSlidingMenu}
 		<div
 			on:click={() => (showBigMenu = false)}
 			class="hidden lg:block border-t bg-white w-full mx-auto p-2 -z-10 shadow-xl text-center"
 			transition:fly={{ y: -10 }}
 		>
-			<ul class="flex gap-1 justify-evenly font-condensed font-bold text-sm items-start">
-				<li>
-					<a
-						href="/guests/polyclinic"
-						class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg"
-						>Реабилитация после COVID-19 и пневмонии</a
-					>
-				</li>
-				<li>
+			<ul class="flex gap-1 justify-center font-condensed font-bold text-sm items-start">
+				{#each $pages as page (page.id)}
+					<li>
+						<a
+							href={'/guests/polyclinic/' + page.slug}
+							class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg">{page.title}</a
+						>
+					</li>
+				{/each}
+				<!-- <li>
 					<a
 						href="/guests/polyclinic"
 						class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg"
@@ -217,7 +218,7 @@
 						class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg"
 						>Лечение протрузии грыжи позвоночника</a
 					>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 	{/if}
