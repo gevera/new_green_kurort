@@ -12,7 +12,7 @@
 <div
 	class="hero min-h-[50vh] mt-20"
 	style={`background-image: url(${
-		main_url + (page.hero_image.formats?.large?.url || page.hero_image.formats?.medium?.url)
+		main_url + (page?.hero_image?.formats?.large?.url || page?.hero_image?.formats?.medium?.url)
 	});`}
 >
 	<div class="hero-overlay bg-opacity-60" />
