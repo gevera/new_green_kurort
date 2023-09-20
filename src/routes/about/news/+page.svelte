@@ -40,7 +40,7 @@
 					<h3
 						class="title-font sm:text-3xl text-2xl my-4 font-semibold font-condensed text-gray-900 text-center"
 					>
-						{novosti.title}
+						{novosti?.title}
 					</h3>
 					<date class="text-sm text-gray-500 my-4"
 						>{new Date(novosti.date).toLocaleDateString('ru-RU')}</date

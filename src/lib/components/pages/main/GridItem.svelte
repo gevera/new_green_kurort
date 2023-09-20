@@ -30,6 +30,6 @@
 		</div>
 	{/if}
 	<div class="hero-content text-white flex flex-col justify-end h-full">
-		<h5 class="font-bold font-condensed text-xl">{item.title}</h5>
+		<h5 class="font-bold font-condensed text-xl">{item?.title}</h5>
 	</div>
 </a>

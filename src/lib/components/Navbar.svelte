@@ -161,15 +161,15 @@
 	{#if $pages.length && showSlidingMenu}
 		<div
 			on:click={() => (showBigMenu = false)}
-			class="hidden lg:block border-t bg-white w-full mx-auto p-2 -z-10 shadow-xl text-center"
+			class="hidden lg:block border-t bg-white w-full mx-auto p-2 -z-10 shadow-xl text-center max-w-[100vw] overflow-x-auto"
 			transition:fly={{ y: -10 }}
 		>
-			<ul class="flex gap-1 justify-center font-condensed font-bold text-sm items-start">
+			<ul class="flex gap-1 justify-start font-condensed font-bold text-sm items-start  w-max">
 				{#each $pages as page (page.id)}
 					<li>
 						<a
 							href={'/guests/polyclinic/' + page.slug}
-							class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg">{page.title}</a
+							class="py-1 px-2 hover:bg-gray-200 duration-300 ease-in rounded-lg">{page?.title}</a
 						>
 					</li>
 				{/each}

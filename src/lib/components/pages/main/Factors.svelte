@@ -38,11 +38,11 @@
 			<li class="border border-gray-200 rounded-3xl p-6">
 				<div class="avatar">
 					<div class="w-24 rounded-full">
-						<img src={item.img} alt={item.title} />
+						<img src={item.img} alt={item?.title} />
 					</div>
 				</div>
 				<h6 class="font-condensed font-bold text-gray-400 text-xl lg:max-w-[14rem] leading-5 mb-4">
-					{item.title}
+					{item?.title}
 				</h6>
 				<p class="leading-6 text-sm lg:max-w-[18rem]">{item.details}</p>
 			</li>

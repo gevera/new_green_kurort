@@ -37,7 +37,7 @@
 				<a href={item.url} class="grid grid-cols-8 lg:grid-cols-12 gap-2 items-center border-b py-4 md:p-4 hover:bg-gray-300 ease-in duration-300">
 					<div class="col-span-1 lg:col-span-6 text-2xl text-gray-400 font-condensed">{item.id}</div>
                     <div class="col-span-6 lg:col-span-5 font-bold font-condensed text-xl text-left leading-6">
-                        {item.title}
+                        {item?.title}
                     </div>
                     <div class="col-span-1 w-4 h-4 place-self-center">
                         <ChevronUpRight />

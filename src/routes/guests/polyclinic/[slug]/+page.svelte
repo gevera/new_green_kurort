@@ -18,13 +18,13 @@
 	<div class="hero-overlay bg-opacity-60" />
 	<div class="hero-content text-center text-neutral-content">
 		<div class="max-w-md">
-			<h1 class="mb-5 text-3xl md:text-5xl font-bold font-condensed text-white">
-				{page.title}
+			<h1 class="mb-5 text-3xl md:text-5xl font-bold font-condensed text-white max-w-lg break-words">
+				{page?.title}
 			</h1>
 		</div>
 	</div>
 </div>
-<section class="container p-4 mx-auto max-w-screen-xl my-12">
+<section class="container p-4 mx-auto max-w-screen-xl my-12 overflow-hidden">
 	<div class="gap-8 flex flex-col lg:flex-row items-start">
 		<div class="flex-grow">
 			{@html page.body}
@@ -32,7 +32,7 @@
 		<div class="lg:max-w-md w-full place-self-center lg:place-self-start">
 			<img
 				src={main_url + page.secondary_image.formats?.medium?.url}
-				alt={page.title}
+				alt={page?.title}
 				class="w-full rounded-lg object-cover object-center"
 			/>
 		</div>
